@@ -4,8 +4,8 @@ import (
 	"database/sql"
 	"fmt"
 	_ "github.com/go-sql-driver/mysql"
-	"gochat/config"
-	"gochat/logger"
+	"gochat.udp/config"
+	"gochat.udp/logger"
 )
 
 var (

@@ -3,7 +3,8 @@ package config
 import (
 	"context"
 	"go.etcd.io/etcd/clientv3"
-	"gochat/logger"
+	"gochat.udp/logger"
+	"strconv"
 	"time"
 )
 
@@ -16,7 +17,7 @@ func init() {
 	var err error
 	config, err = clientv3.New(clientv3.Config{
 		Endpoints:   []string{"127.0.0.1:2379"},
-		DialTimeout: 5 * time.Second,
+		DialTimeout: 10 * time.Second,
 	})
 	ctx = context.Background()
 	if err != nil {
@@ -34,7 +35,16 @@ func GetKey(key string) string {
 	for _, v := range resp.Kvs {
 		value = string(v.Value)
 		logger.Infof("get etcd key=%v, value=%v\n", key, value)
+		return value
 	}
-	logger.Info("return value", value)
+	return value
+}
+
+func GetIntKey(key string) int {
+	strval := GetKey(key)
+	value, err := strconv.Atoi(strval)
+	if err != nil {
+		logger.Error("convert key to in err", err)
+	}
 	return value
 }

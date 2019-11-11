@@ -4,8 +4,10 @@ import (
 	"errors"
 	"fmt"
 	"github.com/go-redis/redis"
-	"gochat/config"
-	"gochat/logger"
+	"gochat.udp/config"
+	"gochat.udp/logger"
+	"strconv"
+	"time"
 )
 
 var (
@@ -15,12 +17,12 @@ var (
 
 func init() {
 	redisquerycli = redis.NewClient(&redis.Options{
-		Addr:     config.GetKey("redis_host"),
+		Addr:     config.GetKey("redis_host")+":"+config.GetKey("redis_port"),
 		Password: config.GetKey("redis_password"),
 		DB:       0,
 	})
 	redisupsertcli = redis.NewClient(&redis.Options{
-		Addr:     config.GetKey("redis_host"),
+		Addr:     config.GetKey("redis_host")+":"+config.GetKey("redis_port"),
 		Password: config.GetKey("redis_password"),
 		DB:       0,
 	})
@@ -47,4 +49,55 @@ func Upsert(addr, name string) error {
 	}
 
 	return err
+}
+
+func IdtoUdpAddr(id int, udpaddr string) {
+	err := redisupsertcli.HSet("idtoudpaddr", strconv.Itoa(id), udpaddr).Err()
+	if err != nil {
+		logger.Errorf("insert id[%d] to udpaddr[%s] err: %v", id, udpaddr, err)
+	}
+}
+
+func KeepOnline(id int, udpaddr string) {
+	err := redisupsertcli.Set(strconv.Itoa(id), udpaddr, time.Duration(config.GetIntKey("expire"))*time.Millisecond).Err()
+	if err != nil {
+		logger.Errorf("insert id[%d] to udpaddr[%s] err: %v", id, udpaddr, err)
+	}
+}
+
+func IsOnline(id int) bool {
+	err := redisquerycli.Exists(strconv.Itoa(id))
+	if err != nil {
+		logger.Errorf("insert id[%d] to udpaddr[%s] err: %v", err)
+		return false
+	}
+	return true
+}
+
+func GetUdpAddrById(id int) (res string, success bool) {
+	res, err := redisquerycli.HGet("idtoudpaddr", strconv.Itoa(id)).Result()
+	success = true
+	if err != nil {
+		logger.Errorf("get udp addr by id[%d] err: %v", id, err)
+		success = false
+	}
+	return
+}
+
+func AllUDPAddrSet(udpaddr string) {
+	err := redisupsertcli.SAdd("allupdaddrset", udpaddr).Err()
+	if err != nil {
+		logger.Errorf("set upd addr[%s] err: %v", udpaddr, err)
+	}
+}
+
+func AllUDPAddrExist(udpaddr string) {
+	err := redisupsertcli.SIsMember("allupdaddrset", udpaddr).Err()
+	if err != nil {
+		logger.Errorf("set upd addr[%s] err: %v", udpaddr, err)
+	}
+}
+
+func QueryAddr(key string) {
+
 }

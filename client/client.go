@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"encoding/json"
 	"fmt"
+	"gochat.udp/config"
 	"gochat.udp/logger"
 	"gochat.udp/models"
 	"gochat.udp/utils"
@@ -18,6 +19,7 @@ var (
 	sendmsgchan chan models.Message
 	recmsgchan  chan models.Message
 	conn        *net.UDPConn
+	LocalID     int
 )
 
 func init() {
@@ -27,7 +29,7 @@ func init() {
 
 func main() {
 	var err error
-	addr := utils.Buildudpaddr("106.13.230.225:9713")
+	addr := utils.Buildudpaddr(config.GetKey("host") + ":" + config.GetKey("port"))
 	conn, err = net.DialUDP("udp", nil, addr)
 	if err != nil {
 		logger.Error("dial udp err ", err)
@@ -40,10 +42,10 @@ func main() {
 	if err != nil {
 		logger.Error("reader bufio err ", err)
 	}
-	myid, err := strconv.Atoi(strings.Trim(localid, "\r\n"))
+	LocalID, err = strconv.Atoi(strings.Trim(localid, "\r\n"))
 	message := models.Message{
 		Time: time.Now().Nanosecond(),
-		From: myid,
+		From: LocalID,
 	}
 	data, err := json.Marshal(message)
 	if err != nil {
@@ -54,6 +56,7 @@ func main() {
 		logger.Errorf("write err %v write %d data", err, n)
 	}
 
+	go keepalive(conn)
 	go msg_center()
 	go read_data()
 	go msg_rec()
@@ -73,7 +76,7 @@ func main() {
 		}
 		sendmessage := models.Message{
 			Time:    time.Now().Nanosecond(),
-			From:    myid,
+			From:    LocalID,
 			To:      id,
 			MsgType: models.PRIVATEMSG,
 			Msg:     []byte(msgs[1]),

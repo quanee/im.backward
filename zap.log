@@ -12,3 +12,45 @@
 {"level":"error","ts":"2019-11-04T15:57:09.148+0800","caller":"server/server.go:92","msg":"write err write udp 127.0.0.1:9876: missing address write 0 data"}
 {"level":"error","ts":"2019-11-11T12:11:37.858+0800","caller":"client/client.go:71","msg":"ascii to int err strconv.Atoi: parsing \"dsaf\": invalid syntax"}
 {"level":"error","ts":"2019-11-11T12:11:39.416+0800","caller":"client/client.go:64","msg":"reader bufio err EOF"}
+{"level":"info","ts":"2019-11-11T15:52:00.855+0800","caller":"config/config.go:26","msg":"Etcd init successfully!"}
+{"level":"error","ts":"2019-11-11T15:52:00.901+0800","caller":"database/mysql.go:30","msg":"ping mysql err, dial tcp :0: connectex: The requested address is not valid in its context."}
+{"level":"info","ts":"2019-11-11T15:52:00.904+0800","caller":"config/config.go:37","msg":"get etcd key=redis_host, value=106.13.230.225\n"}
+{"level":"info","ts":"2019-11-11T15:52:00.911+0800","caller":"config/config.go:37","msg":"get etcd key=redis_port, value=6679\n"}
+{"level":"info","ts":"2019-11-11T15:52:00.920+0800","caller":"config/config.go:37","msg":"get etcd key=redis_host, value=106.13.230.225\n"}
+{"level":"info","ts":"2019-11-11T15:52:00.929+0800","caller":"config/config.go:37","msg":"get etcd key=redis_port, value=6679\n"}
+{"level":"info","ts":"2019-11-11T15:52:01.287+0800","caller":"config/config.go:37","msg":"get etcd key=host, value=127.0.0.1\n"}
+{"level":"info","ts":"2019-11-11T15:52:01.287+0800","caller":"config/config.go:37","msg":"get etcd key=port, value=9876\n"}
+{"level":"info","ts":"2019-11-11T15:52:02.306+0800","caller":"config/config.go:26","msg":"Etcd init successfully!"}
+{"level":"info","ts":"2019-11-11T15:52:02.313+0800","caller":"config/config.go:37","msg":"get etcd key=host, value=127.0.0.1\n"}
+{"level":"info","ts":"2019-11-11T15:52:02.314+0800","caller":"config/config.go:37","msg":"get etcd key=port, value=9876\n"}
+{"level":"error","ts":"2019-11-11T15:52:06.813+0800","caller":"config/config.go:47","msg":"convert key to in errstrconv.Atoi: parsing \"\": invalid syntax"}
+{"level":"info","ts":"2019-11-11T15:52:09.092+0800","caller":"config/config.go:26","msg":"Etcd init successfully!"}
+{"level":"info","ts":"2019-11-11T15:52:09.106+0800","caller":"config/config.go:37","msg":"get etcd key=host, value=127.0.0.1\n"}
+{"level":"info","ts":"2019-11-11T15:52:09.106+0800","caller":"config/config.go:37","msg":"get etcd key=port, value=9876\n"}
+{"level":"error","ts":"2019-11-11T15:52:11.408+0800","caller":"config/config.go:47","msg":"convert key to in errstrconv.Atoi: parsing \"\": invalid syntax"}
+{"level":"error","ts":"2019-11-11T15:52:16.178+0800","caller":"config/config.go:47","msg":"convert key to in errstrconv.Atoi: parsing \"\": invalid syntax"}
+{"level":"error","ts":"2019-11-11T15:52:16.366+0800","caller":"database/redis.go:81","msg":"get udp addr by id[1] err: redis: nil"}
+{"level":"error","ts":"2019-11-11T15:52:16.367+0800","caller":"server/server.go:74","msg":"not have user!"}
+{"level":"error","ts":"2019-11-11T15:52:16.367+0800","caller":"server/server.go:85","msg":"write err write udp 127.0.0.1:9876: missing address write 0 data"}
+{"level":"error","ts":"2019-11-11T15:52:36.814+0800","caller":"config/config.go:47","msg":"convert key to in errstrconv.Atoi: parsing \"\": invalid syntax"}
+{"level":"error","ts":"2019-11-11T15:52:41.407+0800","caller":"config/config.go:47","msg":"convert key to in errstrconv.Atoi: parsing \"\": invalid syntax"}
+{"level":"info","ts":"2019-11-11T15:53:50.725+0800","caller":"config/config.go:26","msg":"Etcd init successfully!"}
+{"level":"error","ts":"2019-11-11T15:53:50.755+0800","caller":"database/mysql.go:30","msg":"ping mysql err, dial tcp :0: connectex: The requested address is not valid in its context."}
+{"level":"info","ts":"2019-11-11T15:53:50.757+0800","caller":"config/config.go:37","msg":"get etcd key=redis_host, value=106.13.230.225\n"}
+{"level":"info","ts":"2019-11-11T15:53:50.758+0800","caller":"config/config.go:37","msg":"get etcd key=redis_port, value=6679\n"}
+{"level":"info","ts":"2019-11-11T15:53:50.759+0800","caller":"config/config.go:37","msg":"get etcd key=redis_host, value=106.13.230.225\n"}
+{"level":"info","ts":"2019-11-11T15:53:50.760+0800","caller":"config/config.go:37","msg":"get etcd key=redis_port, value=6679\n"}
+{"level":"info","ts":"2019-11-11T15:53:51.111+0800","caller":"config/config.go:37","msg":"get etcd key=host, value=127.0.0.1\n"}
+{"level":"info","ts":"2019-11-11T15:53:51.112+0800","caller":"config/config.go:37","msg":"get etcd key=port, value=9876\n"}
+{"level":"info","ts":"2019-11-11T15:54:00.901+0800","caller":"config/config.go:26","msg":"Etcd init successfully!"}
+{"level":"info","ts":"2019-11-11T15:54:00.905+0800","caller":"config/config.go:37","msg":"get etcd key=host, value=127.0.0.1\n"}
+{"level":"info","ts":"2019-11-11T15:54:00.907+0800","caller":"config/config.go:37","msg":"get etcd key=port, value=9876\n"}
+{"level":"error","ts":"2019-11-11T15:54:02.598+0800","caller":"config/config.go:47","msg":"convert key to in errstrconv.Atoi: parsing \"\": invalid syntax"}
+{"level":"error","ts":"2019-11-11T15:54:05.480+0800","caller":"config/config.go:47","msg":"convert key to in errstrconv.Atoi: parsing \"\": invalid syntax"}
+{"level":"info","ts":"2019-11-11T15:54:09.351+0800","caller":"config/config.go:26","msg":"Etcd init successfully!"}
+{"level":"info","ts":"2019-11-11T15:54:09.357+0800","caller":"config/config.go:37","msg":"get etcd key=host, value=127.0.0.1\n"}
+{"level":"info","ts":"2019-11-11T15:54:09.358+0800","caller":"config/config.go:37","msg":"get etcd key=port, value=9876\n"}
+{"level":"error","ts":"2019-11-11T15:54:10.381+0800","caller":"config/config.go:47","msg":"convert key to in errstrconv.Atoi: parsing \"\": invalid syntax"}
+{"level":"error","ts":"2019-11-11T15:54:13.622+0800","caller":"config/config.go:47","msg":"convert key to in errstrconv.Atoi: parsing \"\": invalid syntax"}
+{"level":"error","ts":"2019-11-11T15:54:17.551+0800","caller":"config/config.go:47","msg":"convert key to in errstrconv.Atoi: parsing \"\": invalid syntax"}
+{"level":"error","ts":"2019-11-11T15:54:32.599+0800","caller":"config/config.go:47","msg":"convert key to in errstrconv.Atoi: parsing \"\": invalid syntax"}

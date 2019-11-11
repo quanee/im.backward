@@ -29,6 +29,7 @@ type ACK struct {
 
 type KeepLive struct {
 	ID int
+	conn *net.UDPConn
 }
 
 type Login struct {

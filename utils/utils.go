@@ -31,6 +31,7 @@ func GetSHA256HashCode(message []byte) string {
 func Buildudpaddr(addr string) *net.UDPAddr {
 	defer func() {
 		if err := recover(); err != nil {
+			fmt.Println(addr)
 			fmt.Println("build udp address err:", err)
 		}
 	}()
