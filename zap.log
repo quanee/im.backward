@@ -1,0 +1,14 @@
+{"level":"error","ts":"2019-11-04T15:53:28.107+0800","caller":"server/server.go:84","msg":"not have user!"}
+{"level":"error","ts":"2019-11-04T15:53:28.164+0800","caller":"server/server.go:92","msg":"write err write udp 127.0.0.1:9876: missing address write 0 data"}
+{"level":"error","ts":"2019-11-04T15:53:29.794+0800","caller":"server/server.go:84","msg":"not have user!"}
+{"level":"error","ts":"2019-11-04T15:53:29.794+0800","caller":"server/server.go:92","msg":"write err write udp 127.0.0.1:9876: missing address write 0 data"}
+{"level":"error","ts":"2019-11-04T15:53:53.331+0800","caller":"server/server.go:84","msg":"not have user!"}
+{"level":"error","ts":"2019-11-04T15:53:53.331+0800","caller":"server/server.go:92","msg":"write err write udp 127.0.0.1:9876: missing address write 0 data"}
+{"level":"error","ts":"2019-11-04T15:56:01.691+0800","caller":"server/server.go:84","msg":"not have user!"}
+{"level":"error","ts":"2019-11-04T15:56:01.745+0800","caller":"server/server.go:92","msg":"write err write udp 127.0.0.1:9876: missing address write 0 data"}
+{"level":"error","ts":"2019-11-04T15:57:02.708+0800","caller":"server/server.go:84","msg":"not have user!"}
+{"level":"error","ts":"2019-11-04T15:57:02.708+0800","caller":"server/server.go:92","msg":"write err write udp 127.0.0.1:9876: missing address write 0 data"}
+{"level":"error","ts":"2019-11-04T15:57:09.148+0800","caller":"server/server.go:84","msg":"not have user!"}
+{"level":"error","ts":"2019-11-04T15:57:09.148+0800","caller":"server/server.go:92","msg":"write err write udp 127.0.0.1:9876: missing address write 0 data"}
+{"level":"error","ts":"2019-11-11T12:11:37.858+0800","caller":"client/client.go:71","msg":"ascii to int err strconv.Atoi: parsing \"dsaf\": invalid syntax"}
+{"level":"error","ts":"2019-11-11T12:11:39.416+0800","caller":"client/client.go:64","msg":"reader bufio err EOF"}
